@@ -1,0 +1,10 @@
+Write-Host "Starting Chocolatey installation..."
+If ((Get-ExecutionPolicy) -ne 'RemoteSigned') {Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force}
+Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
+Write-Host "Finished Chocolatey installation..."
+Write-Host "Starting 7zip installation..."
+choco install 7zip -y
+Write-Host "Finished 7zip installation..."
+Write-Host "Starting docker installation..."
+choco install docker-desktop -y
+Write-Host "Finishing docker installation..."
